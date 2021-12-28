@@ -19,3 +19,8 @@ spec:
         image: jupyter/datascience-notebook:latest
         ports:
         - containerPort: 8888
+        command:
+            - /bin/bash
+            - -c
+            - |
+              start.sh jupyter lab --LabApp.token='password' --LabApp.ip='0.0.0.0' --LabApp.allow_root=True

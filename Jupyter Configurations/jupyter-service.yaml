@@ -3,10 +3,12 @@ kind: Service
 metadata:
   name: jupyter-service
 spec:
+  type: NodePort
   ports:
     - protocol: TCP
       port: 8888
       targetPort: 8888
+      nodePort: 30080
       name: http
   selector:
-    name: jupyter
+    app: jupyter
