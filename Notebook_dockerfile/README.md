@@ -7,10 +7,12 @@ Already installed:
 + Basic Libraries
 + PySparks 
 
-The environment is a debian. 
+The environment is a debian.  
 [Mamba](https://github.com/mamba-org/mamba) is installed to download libraries using conda. 
+   
 So create a DockerFile running `mamba install` to download **TensorFlow** and **MongoDB**.
-
+  
+  
 So we are adding:
 + TensorFlow
 + PyMongo
