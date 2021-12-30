@@ -1,4 +1,5 @@
-### Create a docker file for python development
+# Create a docker file for python development
+
 This image is based on an official jupyter image.
 Already installed:
 + python
@@ -6,8 +7,8 @@ Already installed:
 + Basic Libraries
 + PySparks 
 
-The environment is a debian.
-Mamba is installed to download libraries using conda.
+The environment is a debian. 
+[Mamba](https://github.com/mamba-org/mamba) is installed to download libraries using conda. 
 So create a DockerFile running `mamba install` to download **TensorFlow** and **MongoDB**.
 
 So we are adding:
@@ -35,11 +36,11 @@ RUN mamba install --quiet --yes \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"
 ```
-Then we are using `docker build` to build the image, `-t` to specify the name of the created image.
+Then, we are using `docker build` to build the image, `-t` to specify the name of the created image.
 ```shell
 docker build . -f Deeplearning-Notebook.txt -t deeplearning-notebook
 ```
-And now we running the image with `docker run`, `-p` to map the virtual port of the container with our physical port.
+And now, we are running the image with `docker run`, `-p` to map the virtual port of the container with our physical port.
 ```shell
 docker run -p 8888:8888 deeplearning-notebook
 ```
