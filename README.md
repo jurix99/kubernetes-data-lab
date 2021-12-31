@@ -47,3 +47,20 @@ brew install minikube
 ```sh
 minikube start
 ```
+
+# Deploying the Jupyter on the cluster
+
+We implemented Service and Deployment configurations in order to run the Jupyter lab on our cluster. Run on your terminal the following:
+
+```sh
+kubectl apply -f Config_Jupyter/jupyter-service.yaml
+kubectl apply -f Config_Jupyter/jupyter-deployment.yaml
+```
+
+Finally, run on your terminal:
+
+```sh
+minikube service jupyter-service
+```
+
+You should have access of the Jupyter on the nodeport 30080
