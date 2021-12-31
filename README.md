@@ -54,7 +54,7 @@ brew install minikube
 minikube start
 ```
 
-# Deploying the Jupyter on the cluster
+## Deploying the Jupyter on the cluster
 
 We implemented Service and Deployment configurations in order to run the Jupyter lab on our cluster. Run on your terminal the following:
 
@@ -71,7 +71,7 @@ minikube service jupyter-service
 
 You should have access of the Jupyter on the nodeport 30080
 
-# Set up Rook
+## Set up Rook
 
 We just set up a minikube cluster locally, we can now deploy Rook:
 
