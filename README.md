@@ -15,6 +15,7 @@ If you don't have these basic requirements, we're afraid you can't run our proje
 
 * Docker (or similarly compatible) container or a Virtual Machine environment
 * Kubernetes
+* Minikube
 
 In case you don't have these requirements, please follow the instructions on this [this article](https://minikube.sigs.k8s.io/docs/start/)
 
