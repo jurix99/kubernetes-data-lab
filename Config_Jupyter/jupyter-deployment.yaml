@@ -5,7 +5,7 @@ metadata:
   labels:
     app: jupyter
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: jupyter
@@ -16,9 +16,25 @@ spec:
     spec:
       containers:
       - name: jupyter
-        image: jupyter/depplearning-notebook:latest
+        image: sebjul06/deeplearning-notebook:latest
         ports:
         - containerPort: 8888
+        env:
+        - name: USER_NAME
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: mongo-user
+        - name: USER_PWD
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: mongo-password
+        - name: DB_URL
+          valueFrom:
+            configMapKeyRef:
+              name: mongo-config
+              key: mongo-url
         command:
             - /bin/bash
             - -c
