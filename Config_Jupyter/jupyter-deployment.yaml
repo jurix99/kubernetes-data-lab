@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: jupyter
-        image: jupyter/depplearning-notebook:latest
+        image: sebjul06/deeplearning-notebook:latest
         ports:
         - containerPort: 8888
         command:
