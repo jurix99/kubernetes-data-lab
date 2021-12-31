@@ -18,12 +18,6 @@ If you don't have these basic requirements, we're afraid you can't run our proje
 
 In case you don't have these requirements, please follow the instructions on this [this article](https://minikube.sigs.k8s.io/docs/start/)
 
-* Rook:
-
-```sh
-git clone https://github.com/rook/rook.git
-```
-
 
 ## Setting-up Minikube on macOS Intel environment
 
@@ -71,26 +65,23 @@ minikube service jupyter-service
 
 You should have access of the Jupyter on the nodeport 30080
 
-## Set up Rook
+Inter the password: `'password'` to connect to the environment
 
-We just set up a minikube cluster locally, we can now deploy Rook:
 
-```sh
-kubectl create -f rook/cluster/examples/kubernetes/ceph/operator.yaml
-````
+## Deploying MongoDB
 
-And we create a cluster for Rook:
+We implemented [here](https://github.com/seb-jul/kubernetes-data-lab/tree/main/mongodb) several configuration files to run MongoDB on our cluster.
 
-```sh
-kubectl create -f rook/cluster/examples/kubernetes/ceph/cluster.yaml
-````
-
-We created a Rook Client to consome the Rook storage:
+Run on your terminal the following:
 
 ```sh
-kubectl create -f Rook/rook-client.yaml
+kubectl apply -f mongodb/mongo-service.yaml
+kubectl apply -f mongodb/mongo-deployment.yaml
+kubectl apply -f mongodb/mongo-config.yaml
+kubectl apply -f mongodb/mongo-secret.yaml
 ```
+You can test now by importing the library in a new notebook
 
 ```sh
-kubectl exec -it rook-client -- /bin/bash
+import pymongo
 ```
