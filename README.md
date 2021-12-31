@@ -56,7 +56,7 @@ minikube start
 
 ## Deploying the Jupyter on the cluster
 
-We implemented Service and Deployment configurations in order to run the Jupyter lab on our cluster. Run on your terminal the following:
+We implemented Service and Deployment configurations in order to run the Jupyter lab on our cluster. We also made our [Dockerfile](https://github.com/seb-jul/kubernetes-data-lab/tree/main/Notebook_dockerfile) for specific dependencies. Run on your terminal the following:
 
 ```sh
 kubectl apply -f Config_Jupyter/jupyter-service.yaml
