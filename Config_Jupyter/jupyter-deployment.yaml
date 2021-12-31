@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: jupyter
-        image: jupyter/datascience-notebook:latest
+        image: jupyter/depplearning-notebook:latest
         ports:
         - containerPort: 8888
         command:

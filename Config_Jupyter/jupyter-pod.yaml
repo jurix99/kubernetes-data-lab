@@ -5,6 +5,6 @@ metadata:
 spec:
   containers:
   - name: jupyter
-    image: jupyter/datascience-notebook:latest
+    image: jupyter/deeplearning-notebook:latest
     ports:
     - containerPort: 8888
