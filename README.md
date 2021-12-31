@@ -18,6 +18,12 @@ If you don't have these basic requirements, we're afraid you can't run our proje
 
 In case you don't have these requirements, please follow the instructions on this [this article](https://minikube.sigs.k8s.io/docs/start/)
 
+* Rook:
+
+```sh
+git clone https://github.com/rook/rook.git
+```
+
 
 ## Setting-up Minikube on macOS Intel environment
 
@@ -64,3 +70,27 @@ minikube service jupyter-service
 ```
 
 You should have access of the Jupyter on the nodeport 30080
+
+# Set up Rook
+
+We just set up a minikube cluster locally, we can now deploy Rook:
+
+```sh
+kubectl create -f rook/cluster/examples/kubernetes/ceph/operator.yaml
+````
+
+And we create a cluster for Rook:
+
+```sh
+kubectl create -f rook/cluster/examples/kubernetes/ceph/cluster.yaml
+````
+
+We created a Rook Client to consome the Rook storage:
+
+```sh
+kubectl create -f Rook/rook-client.yaml
+```
+
+```sh
+kubectl exec -it rook-client -- /bin/bash
+```
